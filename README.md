@@ -136,10 +136,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - lumao20
+      - lumao1
       - DIRECT
 
-  - name: "lumao20"
+  - name: "lumao1"
     # type: url-test 自动选择最快的线路 type: select 手动选择
     type: url-test
     use:
@@ -151,7 +151,7 @@ proxy-groups:
 proxy-providers:
   provider1:
     type: file
-    path: /root/lumao/proxy_providers/proxy_1_proxy_20.yaml
+    path: /root/lumao/proxy_providers/proxy_1_proxy_1.yaml
     interval: 3600
     health-check:
       enable: true
