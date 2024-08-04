@@ -89,7 +89,6 @@ proxy-groups:
 proxy-providers:
   provider1:
     type: file
-    # url: "https://dingyueqi.661122.xyz/sub?host=notls-jp5.661122.xyz&uuid=41857e1a-6ea6-4a73-f36d-7da9b15c38d3&path=/"
     path: /root/lumao/proxy_providers/proxy_1_proxy_1.yaml
     interval: 3600
     health-check:
