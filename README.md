@@ -264,7 +264,7 @@ journalctl -u lumao1 -o cat -e
 journalctl -u lumao1 -o cat -f
 ```
 
-代理池就搭建好了。
+代理池就搭建好了。你有多少个浏览器那么我们就建立多个服务，比如:lumao1,lumao2,lumao3,lumao4.......lumao100,记得增加config目录的yaml文件就可以啦！
 
 ## 3、测试代理池
 
