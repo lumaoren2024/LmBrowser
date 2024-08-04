@@ -7,12 +7,20 @@ echo "+------------------------------------------------------------------------+
 echo "|                              省钱版本                                   |"
 echo "+------------------------------------------------------------------------+"
 
+# 设置固定的 Chrome 实例文件夹路径
+chrome_path="/Users/sands/lumao_Chrome/"
+
+# 确保路径以 / 结尾
+if [[ ! $chrome_path =~ /$ ]]; then
+  chrome_path="${chrome_path}/"
+fi
+
 # 检查文件夹是否存在
-if [ -d "/Users/sands/lumao_Chrome/" ]; then
+if [ -d "$chrome_path" ]; then
   echo "文件夹存在"
 else
-  echo "文件夹不存在,脚本自动创建"
-  mkdir -p /Users/sands/lumao_Chrome/lumao_Chrome
+  echo "文件夹不存在, 脚本自动创建"
+  mkdir -p "$chrome_path"
 fi
 
 # 提示用户是否生成新的 Chrome 实例
@@ -33,10 +41,10 @@ if [[ $response =~ ^(yes|y| ) ]]; then
   for ((i = 1; i <= instance_count; i++)); do
     # 自动生成实例名称
     instance_name="lumao$i"
-    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir="/Users/sands/lumao_Chrome/$instance_name" >/dev/null 2>&1 &
+    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir="${chrome_path}${instance_name}" >/dev/null 2>&1 &
     echo "启动 Chrome 实例 $i 名称: $instance_name"
   done
 
   # 修改目录权限
-  chmod -R 0777 /Users/sands/lumao_Chrome/*
+  chmod -R 0777 "${chrome_path}"
 fi
